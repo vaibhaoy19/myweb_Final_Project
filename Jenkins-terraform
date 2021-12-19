@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    stages {
+        stage('Download terraform code from Gihub') { 
+            steps {
+                git credentialsId: 'javahome2', url: 'https://github.com/lakshmiprasad2019/myweb.git'
+            }    
+        }
+        stage('Terraform Ininitialization') {
+            steps {
+                sh """
+                    cd /var/lib/jenkins/workspace/aaa
+                    terraform init -reconfigure
+                """    
+            }
+        }
+        stage('Terraform Plan') {
+            steps {
+                sh """
+                    cd /var/lib/jenkins/workspace/aaa
+                    terraform plan -out=plan.${BUILD_NUMBER}
+                """
+            }    
+        }
+        stage('Terraform Apply') {
+            steps {
+                sh """
+                    cd /var/lib/jenkins/workspace/aaa
+                    terraform apply plan.${BUILD_NUMBER}
+                """
+            }
+        }
+    }    
+}
