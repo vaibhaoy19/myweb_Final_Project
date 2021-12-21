@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sh """
                     cd /var/lib/jenkins/workspace/aaa
-                    terraform apply plan.${BUILD_NUMBER} -input=false --auto-approve
+                    terraform apply plan.${BUILD_NUMBER} -input=false -auto-approve
                 """
             }
         }
