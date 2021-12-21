@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh """
                     cd /var/lib/jenkins/workspace/aaa
-                    terraform plan -out=plan.${BUILD_NUMBER}
+                    terraform plan -out=plan.${BUILD_NUMBER} -input=falseplan 
                 """
             }    
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sh """
                     cd /var/lib/jenkins/workspace/aaa
-                    terraform apply plan.${BUILD_NUMBER} -auto-approve
+                    terraform apply plan.${BUILD_NUMBER} -input=falseplan --auto-approve
                 """
             }
         }
