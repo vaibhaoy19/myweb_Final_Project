@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIAWARYSVAQQCORH2FA"
-  secret_key = "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"
+  access_key = "AKIAWARYSVAQRH6WWEP5"
+  secret_key = "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"
 }
 resource "aws_instance" "myec2" {
   instance_type          = "t2.micro"
