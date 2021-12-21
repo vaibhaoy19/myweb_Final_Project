@@ -10,7 +10,7 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
-  profile    = "${var.profile}"
+  shared_credentials_file = "/var/lib/jenkins/.aws/credentials"
 }
 resource "aws_instance" "myec2" {
   instance_type          = "t2.micro"
