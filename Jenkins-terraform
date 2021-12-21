@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh """
                     cd /var/lib/jenkins/workspace/aaa
-                    terraform init -reconfigure
+                    terraform init
                 """    
             }
         }
