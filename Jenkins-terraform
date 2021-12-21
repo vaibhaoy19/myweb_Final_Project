@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh """
                     cd /var/lib/jenkins/workspace/aaa
-                    terraform plan -out=plan.${BUILD_NUMBER} -var-file=var.tf
+                    terraform plan -out=plan.${BUILD_NUMBER} -var-file=variables.tf
                 """
             }    
         }
