@@ -1,5 +1,15 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
 provider "aws" {
-  region     = "ap-south-1"
+  region = "us-east-1"
 }
 resource "aws_instance" "myec2" {
   instance_type          = "t2.micro"
