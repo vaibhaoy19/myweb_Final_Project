@@ -1,4 +1,10 @@
 pipeline {
+
+     parameters {
+        string(name: 'environment', defaultValue: 'Sample', description: 'Workspace/environment file to use for deployment')
+        booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
+
+    }
     agent any
     stages {
         stage('Download terraform code from Gihub') { 
