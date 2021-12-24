@@ -1,6 +1,9 @@
 variable "profile" {
   type = string
 }
+variable "region" {
+  type = string
+}
 variable "ami_id" {
   type = map(string)
 
