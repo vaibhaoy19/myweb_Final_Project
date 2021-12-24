@@ -9,11 +9,11 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-    profile  = var.profile
+    profile  = Prod
 }
 resource "aws_instance" "myec2" {
   instance_type          = "t2.micro"
-  ami                    = var.ami_id
+  ami                    = "ami-0ed9277fb7eb570c9"
   
   tags = {
     Name = "import"
