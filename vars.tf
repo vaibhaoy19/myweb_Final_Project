@@ -9,3 +9,4 @@ variable "ami_id" {
     us-west-1    = "ami-03af6a70ccd8cb578"
     ca-central-1 = "ami-0bae7412735610274"
   }
+}
