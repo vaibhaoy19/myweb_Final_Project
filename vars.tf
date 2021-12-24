@@ -1,4 +1,4 @@
-variable "region" {
+variable "profile" {
   type = string
 }
 variable "ami_id" {
