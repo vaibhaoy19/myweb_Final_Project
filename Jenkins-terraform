@@ -1,10 +1,6 @@
 pipeline {
 
-     parameters {
-        string(name: 'environment', defaultValue: 'Sample', description: 'Workspace/environment file to use for deployment')
-        booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
-
-    }
+     
     agent any
     stages {
         stage('Download terraform code from Gihub') { 
@@ -24,7 +20,7 @@ pipeline {
             steps {
                 sh """
                     cd /var/lib/jenkins/workspace/aaa
-                    terraform plan -out=plan.${BUILD_NUMBER} -var profile=${params.profile}
+                    terraform plan -out=plan.${BUILD_NUMBER}
                 """
             }    
         }
