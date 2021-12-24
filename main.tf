@@ -9,7 +9,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-    profile  = var.region
+    profile  = var.profile
 }
 resource "aws_instance" "myec2" {
   instance_type          = "t2.micro"
