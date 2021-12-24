@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh """
                     cd /var/lib/jenkins/workspace/aaa
-                    terraform plan -out=plan.${BUILD_NUMBER}
+                    terraform plan -out=plan.${BUILD_NUMBER} -var profile=${params.profile}
                 """
             }    
         }
