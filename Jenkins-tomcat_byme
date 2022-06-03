@@ -1,0 +1,27 @@
+pipeline {
+   agent any
+   stages {
+     stage ('git_clone') {
+       steps {
+          git 'https://github.com/lakshmiprasad2019/myweb.git'
+       }
+     }
+     stage (mvn_build) {
+         steps {
+            sh "mvn clean package"
+         }
+     }
+      stage("deploy-dev"){
+            steps{
+                sh """
+                    scp -o StrictHostKeyChecking=no target/myweb-8.2.5.war  jenkins@172.31.38.152:/tomcat/apache-tomcat-8.5.79/webapps
+                    
+                    ssh jenkins@172.31.38.152 /tomcat/apache-tomcat-8.5.79/bin/shutdown.sh
+                    
+                    ssh jenkins@172.31.38.152 /tomcat/apache-tomcat-8.5.79/bin/startup.sh
+                """
+            }
+      }
+   
+   }
+}
