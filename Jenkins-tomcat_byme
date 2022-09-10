@@ -11,7 +11,7 @@ pipeline {
             sh "mvn clean package"
          }
      }
-      stage("deploy-dev"){
+      stage("deploy-devenv"){
             steps{
                 sh """
                     scp -o StrictHostKeyChecking=no target/myweb-8.2.5.war  jenkins@172.31.10.183:/opt/apache-tomcat-8.5.82/webapps
