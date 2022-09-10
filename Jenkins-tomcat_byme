@@ -14,11 +14,11 @@ pipeline {
       stage("deploy-dev"){
             steps{
                 sh """
-                    scp -o StrictHostKeyChecking=no target/myweb-8.2.5.war  jenkins@172.31.38.152:/tomcat/apache-tomcat-8.5.79/webapps
+                    scp -o StrictHostKeyChecking=no target/myweb-8.2.5.war  jenkins@172.31.10.183:/opt/apache-tomcat-8.5.82/webapps
                     
-                    ssh jenkins@172.31.38.152 /tomcat/apache-tomcat-8.5.79/bin/shutdown.sh
+                    ssh jenkins@172.31.10.183 sudo /usr/local/bin/tomcatdown
                     
-                    ssh jenkins@172.31.38.152 /tomcat/apache-tomcat-8.5.79/bin/startup.sh
+                    ssh jenkins@172.31.10.183 sudo /usr/local/bin/tomcatup
                 """
             }
       }
