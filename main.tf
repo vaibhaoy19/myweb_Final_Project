@@ -14,7 +14,7 @@ provider "aws" {
 }
 resource "aws_instance" "myec2" {
   instance_type          = "t2.micro"
-  ami                    = "${lookup(var.ami_id, var.region)}"
+  ami                    = data.aws_ami.app_ami.id
   
   tags = {
     Name = "import"
