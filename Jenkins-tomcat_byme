@@ -6,6 +6,11 @@ pipeline {
           git 'https://github.com/lakshmiprasad2019/myweb.git'
        }
      }
+     stage (Sonar Scan) {
+         steps {
+             sh "mvn sonar:sonar"
+         }
+     }
      stage (mvn_build) {
          steps {
             sh "mvn clean package"
