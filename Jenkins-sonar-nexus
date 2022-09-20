@@ -34,8 +34,8 @@ pipeline{
                   nexusUrl: '172.31.46.112:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
-                  repository: 'sample-snapshots', 
-                  version: '8.2.5-SNAPSHOT'  
+                  repository: 'sample-releases', 
+                  version: '8.2.5'  
               }
             }
         stage("deploy-dev"){
