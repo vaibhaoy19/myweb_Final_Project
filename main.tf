@@ -44,3 +44,6 @@ provisioner "remote-exec" {
     private_key = file("alankey.pem")
     host        = self.public_ip
   }
+output "mypublicIP" {
+  value = aws_instance.instance-1.public_ip
+}
