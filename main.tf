@@ -32,18 +32,3 @@ data "aws_ami" "app_ami" {
     values = ["amzn2-ami-kernel-5.10**"]
   }
 }
-provisioner "remote-exec" {
-    inline = [
-      "sudo amazon-linux-extras install -y nginx1",
-      "sudo systemctl start nginx"
-    ]
-  }
-  connection {
-    type        = "ssh"
-    user        = "ec2-user"
-    private_key = file("alankey.pem")
-    host        = self.public_ip
-  }
-output "mypublicIP" {
-  value = aws_instance.instance-1.public_ip
-}
