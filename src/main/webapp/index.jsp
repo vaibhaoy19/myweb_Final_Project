@@ -469,7 +469,7 @@ Example 3
   <main>
     <!-- intro section -->
     <section class="intro">
-      <h1 class="title">Black Friday Deals</h1>
+      <h1 class="title">Black Thursday Deals</h1>
       <p>Get up to 50% off on all our products and services. Hurry up, the offer ends in 24 hours.</p>
     </section>
 
