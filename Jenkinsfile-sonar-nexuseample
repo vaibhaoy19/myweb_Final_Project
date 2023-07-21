@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+     
+    stages{
+        stage("Git Checkout"){
+            steps{
+                git credentialsId: 'javahome2', url: 'https://github.com/lakshmiprasad2019/myweb.git'
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean sonar:sonar package"
+                
+            }
+        }
+        stage('Upload War To Nexus'){
+            steps{
+                  nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-9.0.3.war', type: 'war']], credentialsId: 'nexus4', groupId: 'in.javahome', nexusUrl: '65.2.161.67:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sample-releases', version: '9.0.3'
+              }
+            }
+     
+        }
+    }
