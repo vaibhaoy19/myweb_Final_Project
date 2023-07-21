@@ -13,7 +13,7 @@ pipeline{
                 
             }
         }
-        stage('Upload War To Nexus'){
+        stage('Upload War To Nexus repo'){
             steps{
                   nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-9.0.3-SNAPSHOT.war', type: 'war']], credentialsId: 'nexus4', groupId: 'in.javahome', nexusUrl: '65.2.161.67:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mysnapshot', version: '9.0.3-SNAPSHOT'
               }
