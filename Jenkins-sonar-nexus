@@ -1,12 +1,6 @@
 pipeline{
     agent any
-     tools {
-        maven 'Maven-3.6.1'
-    }
-    
-    environment{
-        PATH = "/opt/maven3/bin:$PATH"
-    }
+     
     stages{
         stage("Git Checkout"){
             steps{
@@ -38,20 +32,20 @@ pipeline{
                   version: '8.2.6-SNAPSHOT'  
               }
             }
-        stage("deploy-dev"){
-            steps{
-                sshagent(['tomcat-new']) {
-                sh """
-                    scp -o StrictHostKeyChecking=no target/myweb-8.2.5.war  jenkins@192.168.1.80:/tomcatsoft/apache-tomcat-9.0.56/webapps
+      #  stage("deploy-dev"){
+       #     steps{
+        #        sshagent(['tomcat-new']) {
+         #       sh """
+          #          scp -o StrictHostKeyChecking=no target/myweb-8.2.5.war  jenkins@192.168.1.80:/tomcatsoft/apache-tomcat-9.0.56/webapps
+           #         
+            #        ssh jenkins@192.168.1.80 /tomcatsoft/apache-tomcat-9.0.56/bin/shutdown.sh
                     
-                    ssh jenkins@192.168.1.80 /tomcatsoft/apache-tomcat-9.0.56/bin/shutdown.sh
-                    
-                    ssh jenkins@192.168.1.80 /tomcatsoft/apache-tomcat-9.0.56/bin/startup.sh
+             #       ssh jenkins@192.168.1.80 /tomcatsoft/apache-tomcat-9.0.56/bin/startup.sh
                 
-                """
-            }
+              #  """
+            #}
             
-            }
+            #}
         }
     }
 }
