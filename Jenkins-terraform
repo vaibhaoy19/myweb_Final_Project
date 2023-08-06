@@ -23,7 +23,7 @@ pipeline {
         stage('Terraform Ininitialization') {
             steps {
                 sh """
-                    cd /var/lib/jenkins/workspace/terraformjob
+                    cd /var/lib/jenkins/workspace/${JOB_NAME}
                     terraform init -reconfigure
                 """    
             }
@@ -31,7 +31,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 sh """
-                    cd /var/lib/jenkins/workspace/terraformjob
+                    cd /var/lib/jenkins/workspace/${JOB_NAME}
                     terraform plan -out=plan.${BUILD_NUMBER} -var profile=${params.environment} -var region=${params.region}
                 """
             }    
@@ -39,7 +39,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 sh """
-                    cd /var/lib/jenkins/workspace/terraformjob
+                    cd /var/lib/jenkins/workspace/${JOB_NAME}
                     terraform apply plan.${BUILD_NUMBER}
                 """
             }
