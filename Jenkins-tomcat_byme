@@ -1,28 +1,57 @@
-pipeline {
-   agent any
-   stages {
-     stage ('git_clone') {
-       steps {
-          git 'https://github.com/lakshmiprasad2019/myweb.git'
-       }
-     }
-     
-     stage (mvn_build) {
-         steps {
-            sh "mvn clean sonar:sonar package"
-         }
-     }
-      stage("deploy-devenv"){
+pipeline{
+    agent any
+     tools {
+        maven 'Maven-3.6.1'
+    }
+    
+    environment{
+        PATH = "/opt/maven3/bin:$PATH"
+    }
+    stages{
+        stage("Git Checkout"){
             steps{
+                git credentialsId: 'javahome2', url: 'https://github.com/srinicloud87/myweb.git'
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean sonar:sonar package"
+                
+            }
+        }
+        stage('Upload War To Nexus'){
+            steps{
+                  nexusArtifactUploader artifacts: [
+                       [
+                            artifactId: 'myweb', 
+                            classifier: '', 
+                            file: "target/myweb-8.2.0.war", 
+                            type: 'war'
+                       ]
+                  ], 
+                  credentialsId: 'nexus3', 
+                  groupId: 'in.javahome', 
+                  nexusUrl: '172.31.41.103:8081', 
+                  nexusVersion: 'nexus3', 
+                  protocol: 'http', 
+                  repository: 'sample-releases', 
+                  version: '8.2.0'  
+              }
+            }
+        stage("deploy-dev"){
+            steps{
+                sshagent(['tomcat-new']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/myweb-8.2.5.war  jenkins@172.31.10.183:/opt/apache-tomcat-8.5.82/webapps
+                    scp -o StrictHostKeyChecking=no target/myweb-8.2.0.war  ec2-user@172.31.42.104:/home/ec2-user/apache-tomcat-9.0.80/webapps/
                     
-                    ssh jenkins@172.31.10.183 sudo /usr/local/bin/tomcatdown
+                    ssh ec2-user@172.31.42.104 /home/ec2-user/apache-tomcat-9.0.80/bin/shutdown.sh
                     
-                    ssh jenkins@172.31.10.183 sudo /usr/local/bin/tomcatup
+                    ssh ec2-user@172.31.42.104 /home/ec2-user/apache-tomcat-9.0.80/bin/startup.sh
+                
                 """
             }
-      }
-   
-   }
+            
+            }
+        }
+    }
 }
