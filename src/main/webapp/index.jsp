@@ -73,7 +73,7 @@
 
     li a:hover:not(.active) {
       background-color: #29292a;
-      color: white;
+      color: red;
     }
 
     table {
