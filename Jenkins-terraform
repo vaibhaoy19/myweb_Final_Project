@@ -16,7 +16,7 @@ pipeline {
         stage('DummyStage') { 
             steps {
                 sh """
-                    echo "this is dummystage"
+                    echo "this is dummystage to understand"
                   """
             }    
         }
