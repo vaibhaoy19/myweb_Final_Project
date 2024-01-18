@@ -44,7 +44,7 @@
         <distributionManagement>
                  <snapshotRepository>
                     <id>nexusRepo</id>
-                    <url>http://35.174.3.98:8081/repository/repositories:sample-snap
+                    <url>http://35.174.3.98:8081/repository/sample-snap/</url>
                  </snapshotRepository>
 
                 <repository>
