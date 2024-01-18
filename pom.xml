@@ -4,7 +4,7 @@
         <groupId>in.javahome</groupId>
         <artifactId>myweb</artifactId>
         <packaging>war</packaging>
-        <version>8.2.0</version>
+        <version>8.2.0-SNAPSHOT</version>
         <name>Java Home myweb</name>
         <url>http://maven.apache.org</url>
         <build>
@@ -24,7 +24,7 @@
         </build>
         <properties>
                 <docker.image.prefix>kammana</docker.image.prefix>
-                <sonar.host.url>http://13.232.244.50:9000/</sonar.host.url>
+                <sonar.host.url>http://54.224.207.246:9000/</sonar.host.url>
                 <maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
 
@@ -44,12 +44,12 @@
         <distributionManagement>
                  <snapshotRepository>
                     <id>nexusRepo</id>
-                    <url>http://13.234.38.5:8081/repository/sample-snapshot/</url>
+                    <url>http://35.174.3.98:8081/repository/repositories:sample-snap
                  </snapshotRepository>
 
                 <repository>
                     <id>nexusRepo</id>
-                    <url>http://13.234.38.5:8081/repository/sample-release/</url>
+                    <url>http://35.174.3.98:8081/repository/sample-release/</url>
                 </repository>
         </distributionManagement>
 
