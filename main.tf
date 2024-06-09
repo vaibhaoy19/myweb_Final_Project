@@ -23,7 +23,7 @@ resource "aws_instance" "myec2" {
 
 }
 resource "aws_instance" "myec2-poll" {
-  instance_type          = "t2.micro"
+  instance_type          = "t2.medium"
   ami                    = data.aws_ami.app_ami.id
   
   
