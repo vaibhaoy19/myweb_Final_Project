@@ -9,8 +9,8 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-    region =  var.region
-    profile  = var.profile
+    region =  "us-east-1"
+    
 }
 resource "aws_instance" "myec2" {
   instance_type          = "t2.medium"
