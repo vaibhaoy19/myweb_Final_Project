@@ -19,25 +19,14 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
              </plugin>
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>4.0.0.4121</version>
-             </plugin>
-             <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.1.2184</version>
-             </plugin>
-
-          </plugins>
+             </plugins>
         </build>
         <properties>
                 <docker.image.prefix>kammana</docker.image.prefix>
                 <sonar.host.url>http://52.42.132.62:9000/</sonar.host.url>
-                <maven.compiler.source>11</maven.compiler.source>
-                <maven.compiler.target>11</maven.compiler.target>
-                <java.version>11</java.version>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+               
 
         </properties>
         <dependencies>
