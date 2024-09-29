@@ -23,7 +23,7 @@
         </build>
         <properties>
                 <docker.image.prefix>kammana</docker.image.prefix>
-                <sonar.host.url>http://54.198.233.123/:9000/</sonar.host.url>
+                <sonar.host.url>http://54.198.233.123:9000/</sonar.host.url>
                 <maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
                
