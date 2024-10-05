@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkout') {
+            steps {
+                git 'https://github.com/lakshmiprasad2019/myweb.git'
+            }
+        }
+        stage('terraform init phase') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('terraform plan phase') {
+            steps {
+                sh 'terraform plan -out $BUILD_NUMBER'
+            }
+        }
+        stage('terraform apply phase') {
+            steps {
+                sh 'terraform apply $BUILD_NUMBER'
+            }
+        }
+        
+    }
+}
