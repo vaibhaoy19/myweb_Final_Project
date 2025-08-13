@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: myweb
-        image: shubham7890/myimage_4
+        image: vaibhaodocker19/myimage:6
         ports:
         - containerPort: 8080
