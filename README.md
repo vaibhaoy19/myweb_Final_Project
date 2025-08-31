@@ -131,7 +131,6 @@ spec:
 ![Application Home Page](https://raw.githubusercontent.com/vaibhaoy19/myweb_Final_Project/master/Screenshots/Screenshot%202025-08-13%20174605.png)
 
 
-
 ## 🌟 Key Highlights
 End-to-End CI/CD Pipeline → GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
 
