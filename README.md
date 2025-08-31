@@ -128,7 +128,10 @@ spec:
 ## 📸 Screenshots
 
 ### 🔹 1. Application Home Page
-![Architecture](https://github.com/vaibhaoy19/myweb_Final_Project/blob/95c1ad7fccb82437381d5871e48286c291965a49/Screenshots/Screenshot%202025-08-13%20174605.png)
+### 🔹 1. Application Home Page
+![Application Home Page](<img width="1920" height="981" alt="Screenshot 2025-08-13 174605" src="https://github.com/user-attachments/assets/5c8cda65-d121-4047-bb23-c9271cea3c6e" />
+)
+
 
 
 
