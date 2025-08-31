@@ -14,6 +14,7 @@ The pipeline automates the workflow from **code commit → build → containeriz
 ---
 
 ## 📊 Architecture Workflow
+
 ```mermaid
 flowchart LR
     A[👨‍💻 Developer] -->|Push Code| B[📂 GitHub Repository]
@@ -74,7 +75,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 sh '''
-                docker login -u your-dockerhub-user -p yourpassword
+                docker login -u your-dockerhub-user -p $DOCKER_HUB_PASS
                 docker push your-dockerhub-user/java-app:$BUILD_NUMBER
                 '''
             }
@@ -126,24 +127,26 @@ spec:
       targetPort: 8080
       nodePort: 30007
 📸 Screenshots
-✅ Application Running on Browser
+📍 Place your screenshots inside a folder named screenshots/ in your repo.
 
-✅ Jenkins CI/CD Pipeline
+Application Running in Browser:
 
-✅ Kubernetes Pods & Services
+Jenkins CI/CD Pipeline:
 
-# 🔑 Key Highlights
-End-to-End CI/CD Pipeline: GitHub → Jenkins → Maven → Docker → AWS EKS.
+Kubernetes Pods & Services:
 
-Scalable & Highly Available: Multi-pod Kubernetes deployment.
+🔑 Key Highlights
+End-to-End CI/CD Pipeline: GitHub → Jenkins → Maven → Docker → AWS EKS
 
-Artifact Management: Maven + Docker Hub.
+Scalable & Highly Available: Multi-pod Kubernetes deployment
 
-Automated Deployment: Kubernetes NodePort service.
+Artifact Management: Maven + Docker Hub
 
-Monitoring & Logging: CloudWatch & kubectl logs.
+Automated Deployment: Kubernetes NodePort service
 
-Security: IAM roles & policies for safe integration.
+Monitoring & Logging: CloudWatch & kubectl logs
+
+Security: IAM roles & policies for safe integration
 
 👤 Author
 Vaibhao Yenchalwar
