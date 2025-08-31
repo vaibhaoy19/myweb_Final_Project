@@ -51,8 +51,6 @@ The pipeline integrates **GitHub, Jenkins, Maven, Docker, Kubernetes (AWS EKS)**
 │ ├── jenkins-pipeline.png
 │ └── k8s-pods.png
 
-python
-Copy code
 
 ---
 
@@ -81,11 +79,10 @@ pipeline {
         }
     }
 }
+
 ☸️ Kubernetes Deployment
 deployment.yaml
 
-yaml
-Copy code
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -105,10 +102,9 @@ spec:
         image: vaibhaoy19/myweb_app:latest
         ports:
         - containerPort: 8080
+
 service.yaml
 
-yaml
-Copy code
 apiVersion: v1
 kind: Service
 metadata:
@@ -121,12 +117,16 @@ spec:
     - port: 80
       targetPort: 8080
       nodePort: 30008
+
 📸 Screenshots
-🔹 1. Application Home Page
+## 🌐 Application Home Page
 
-🔹 2. Jenkins Pipeline
-
-🔹 3. Kubernetes Pods
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vaibhaoy19/myweb_Final_Project/main/Screenshots/Screenshot%202025-08-13%20174605.png"
+       alt="Application Home Page"
+       width="700"
+       style="border: 2px solid #ddd; border-radius: 4px;"/>
+</p>
 
 🌟 Key Highlights
 ✅ End-to-End CI/CD Pipeline → GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
