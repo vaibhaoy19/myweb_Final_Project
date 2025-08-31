@@ -128,7 +128,7 @@ spec:
 ## 📸 Screenshots
 
 ### 🔹 1. Application Home Page
-![App Screenshot]([https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/app-home.png?raw=true](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png))
+![App Screenshot](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)
 
 ### 🔹 2. Jenkins Pipeline
 ![Pipeline Screenshot](https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/jenkins-pipeline.png?raw=true)
