@@ -115,42 +115,43 @@ spec:
       targetPort: 8080
       nodePort: 30008
 
-🌟 Key Highlights
+# 🌟 Key Highlights
 
-End-to-End CI/CD Pipeline: GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
+- **End-to-End CI/CD Pipeline:** GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS  
+- **Kubernetes Orchestration:** High availability & self-healing pods  
+- **Artifact Management:** Maven for build artifacts, Docker Hub for images  
+- **Automated Deployment:** Kubernetes NodePort Service for external access  
+- **Monitoring & Logging:** AWS CloudWatch + `kubectl logs`  
+- **Security:** IAM roles & permissions for safe integration  
 
-Kubernetes Orchestration: High availability & self-healing pods
+---
 
-Artifact Management: Maven for build artifacts, Docker Hub for images
+# 📸 Screenshots
 
-Automated Deployment: Kubernetes NodePort Service for external access
+- **1. Application Home Page**  
+  ![Application Home Page](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)  
 
-Monitoring & Logging: AWS CloudWatch + kubectl logs
+- **2. Jenkins Pipeline Execution**  
+  ![Jenkins Pipeline](screenshots/jenkins.png)  
 
-Security: IAM roles & permissions for safe integration
+- **3. Kubernetes Pods Running**  
+  ![Kubernetes Pods](screenshots/k8s_pods.png)  
 
-📸 Screenshots
-🔹 1. Application Home Page
+---
 
-🔹 2. Jenkins Pipeline Execution
+# 🎯 Project Summary
 
-🔹 3. Kubernetes Pods Running
+- **Framework:** Java Web Application  
+- **CI/CD:** Jenkins Pipeline  
+- **Containerization:** Docker  
+- **Orchestration:** AWS EKS (Kubernetes)  
+- **Outcome:** Fully automated cloud-native deployment with high availability  
 
-🎯 Project Summary
+---
 
-Framework: Java Web Application
+# 🏆 Conclusion
 
-CI/CD: Jenkins Pipeline
+This project demonstrates a professional DevOps pipeline integrating CI/CD, containerization, and cloud orchestration.  
+By leveraging Jenkins, Docker, Kubernetes, and AWS EKS, the application achieves:  
 
-Containerization: Docker
-
-Orchestration: AWS EKS (Kubernetes)
-
-Outcome: Fully automated cloud-native deployment with high availability
-
-🏆 Conclusion
-
-This project demonstrates a professional DevOps pipeline integrating CI/CD, containerization, and cloud orchestration.
-By leveraging Jenkins, Docker, Kubernetes, and AWS EKS, the application achieves:
-
-Automation 🚀 | Scalability ☁️ | Reliability 🔧 | Security 🔐
+**Automation 🚀 | Scalability ☁️ | Reliability 🔧 | Security 🔐**
