@@ -120,16 +120,8 @@ spec:
 
 ## 📸 Project Screenshots
 
-### 🔹 1. Application Home Page
-<div align="center" style="padding:15px; border:3px solid #007acc; border-radius:10px; background:#f9f9f9; box-shadow:2px 2px 10px rgba(0,0,0,0.2);">
-  <img src="https://raw.githubusercontent.com/vaibhaoy19/myweb_Final_Project/main/Screenshots/Screenshot%202025-08-13%20174605.png" 
-       alt="Application Home Page" 
-       width="750" />
-  <br/>
-  <strong>✨ Application Home Page ✨</strong>
-</div>
-
----
+### 🔹 Application Home Page  
+![Application Home Page](https://raw.githubusercontent.com/vaibhaoy19/myweb_Final_Project/master/Screenshots/Screenshot%202025-08-13%20174605.png)
 
 🌟 Key Highlights
 ✅ End-to-End CI/CD Pipeline → GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
