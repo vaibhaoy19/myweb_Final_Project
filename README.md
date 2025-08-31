@@ -25,7 +25,8 @@ flowchart LR
     F -->|Pull Image| G[☸️ AWS EKS Cluster]
     G -->|Deploy Pods| H[🌐 NodePort Service]
     H -->|Access App| I[👩‍💻 End User]
-🔄 Workflow Steps
+
+## 🔄 Workflow Steps
 Developer pushes code to GitHub repository.
 
 Jenkins detects changes and triggers the pipeline.
@@ -38,7 +39,7 @@ AWS EKS (Kubernetes) pulls the image and deploys it as Pods.
 
 Application is exposed via NodePort service for end-users.
 
-🛠️ Tools & Technologies
+## 🛠️ Tools & Technologies
 AWS: EC2, VPC, IAM, EKS, S3, CloudWatch
 
 CI/CD: Jenkins, Maven
@@ -126,7 +127,7 @@ spec:
     - port: 8080
       targetPort: 8080
       nodePort: 30007
-📸 Screenshots
+## 📸 Screenshots
 📍 Place your screenshots inside a folder named screenshots/ in your repo.
 
 Application Running in Browser:
@@ -135,7 +136,7 @@ Jenkins CI/CD Pipeline:
 
 Kubernetes Pods & Services:
 
-🔑 Key Highlights
+## 🔑 Key Highlights
 End-to-End CI/CD Pipeline: GitHub → Jenkins → Maven → Docker → AWS EKS
 
 Scalable & Highly Available: Multi-pod Kubernetes deployment
@@ -151,4 +152,4 @@ Security: IAM roles & policies for safe integration
 👤 Author
 Vaibhao Yenchalwar
 📧 Email: vaibhaoy1908@gmail.com
-🔗 GitHub: vaibhao-aws-devops
+🔗 GitHub: vaibhaoy19
