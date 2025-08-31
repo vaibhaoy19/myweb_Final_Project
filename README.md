@@ -128,9 +128,7 @@ spec:
 ## 📸 Screenshots
 
 ### 🔹 1. Application Home Page
-![Application Home Page] (https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)
-
-
+![Application Home Page](https://raw.githubusercontent.com/vaibhaoy19/myweb_Final_Project/master/Screenshots/Screenshot%202025-08-13%20174605.png)
 
 
 
