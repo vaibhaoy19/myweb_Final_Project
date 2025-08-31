@@ -52,8 +52,7 @@ The pipeline integrates **Jenkins, Maven, Docker, Kubernetes (AWS EKS)** and use
 │ ├── jenkins-pipeline.png
 │ └── k8s-pods.png
 
-python
-Copy code
+
 
 ---
 
@@ -82,11 +81,10 @@ pipeline {
         }
     }
 }
+
 ☸️ Kubernetes Deployment
 deployment.yaml
 
-yaml
-Copy code
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -106,10 +104,9 @@ spec:
         image: your-dockerhub-user/your-app:latest
         ports:
         - containerPort: 8080
+
 service.yaml
 
-yaml
-Copy code
 apiVersion: v1
 kind: Service
 metadata:
@@ -122,14 +119,15 @@ spec:
     - port: 80
       targetPort: 8080
       nodePort: 30008
-📸 Screenshots
+
+## 📸 Screenshots
 Application UI
 
 Jenkins Pipeline
 
 Kubernetes Pods & Service
 
-🌟 Key Highlights
+## 🌟 Key Highlights
 End-to-End CI/CD Pipeline → GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
 
 Kubernetes Orchestration with high availability & self-healing Pods
