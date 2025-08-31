@@ -122,16 +122,19 @@ spec:
 
 ---
 
+## 📌 Architecture Workflow
+![Architecture Diagram](https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/architecture.png?raw=true)
+
 ## 📸 Screenshots
 
 ### 🔹 1. Application Home Page
-![App Screenshot](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)
+![App Screenshot]([https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/app-home.png?raw=true](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png))
 
 ### 🔹 2. Jenkins Pipeline
-![Pipeline Screenshot](https://github.com/your-username/your-repo-name/blob/main/screenshots/jenkins-pipeline.png)
+![Pipeline Screenshot](https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/jenkins-pipeline.png?raw=true)
 
 ### 🔹 3. Kubernetes Pods Running
-![Pods Screenshot](https://github.com/your-username/your-repo-name/blob/main/screenshots/k8s-pods.png)
+![Pods Screenshot](https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/k8s-pods.png?raw=true)
 
 ---
 
