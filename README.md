@@ -120,12 +120,20 @@ spec:
       targetPort: 8080
       nodePort: 30008
 
+---
+
 ## 📸 Screenshots
-Application UI
 
-Jenkins Pipeline
+### 🔹 1. Application Home Page
+![App Screenshot](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)
 
-Kubernetes Pods & Service
+### 🔹 2. Jenkins Pipeline
+![Pipeline Screenshot](https://github.com/your-username/your-repo-name/blob/main/screenshots/jenkins-pipeline.png)
+
+### 🔹 3. Kubernetes Pods Running
+![Pods Screenshot](https://github.com/your-username/your-repo-name/blob/main/screenshots/k8s-pods.png)
+
+---
 
 ## 🌟 Key Highlights
 End-to-End CI/CD Pipeline → GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
