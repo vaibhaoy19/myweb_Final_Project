@@ -115,43 +115,45 @@ spec:
       targetPort: 8080
       nodePort: 30008
 
-## 🌟 Key Highlights
+# 🌟 KEY HIGHLIGHTS
 
-- **End-to-End CI/CD Pipeline:** GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS  
-- **Kubernetes Orchestration:** High availability & self-healing pods  
-- **Artifact Management:** Maven for build artifacts, Docker Hub for images  
-- **Automated Deployment:** Kubernetes NodePort Service for external access  
-- **Monitoring & Logging:** AWS CloudWatch + `kubectl logs`  
-- **Security:** IAM roles & permissions for safe integration  
-
----
-
-## 📸 Screenshots
-
-- **1. Application Home Page**  
-  ![Application Home Page](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)  
-
-- **2. Jenkins Pipeline Execution**  
-  ![Jenkins Pipeline](screenshots/jenkins.png)  
-
-- **3. Kubernetes Pods Running**  
-  ![Kubernetes Pods](screenshots/k8s_pods.png)  
+| Feature | Details |
+|---------|---------|
+| **End-to-End CI/CD Pipeline** | GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS |
+| **Kubernetes Orchestration** | High availability & self-healing pods |
+| **Artifact Management** | Maven for build artifacts, Docker Hub for images |
+| **Automated Deployment** | Kubernetes NodePort Service for external access |
+| **Monitoring & Logging** | AWS CloudWatch + `kubectl logs` |
+| **Security** | IAM roles & permissions for safe integration |
 
 ---
 
-## 🎯 Project Summary
+# 📸 SCREENSHOTS
 
-- **Framework:** Java Web Application  
-- **CI/CD:** Jenkins Pipeline  
-- **Containerization:** Docker  
-- **Orchestration:** AWS EKS (Kubernetes)  
-- **Outcome:** Fully automated cloud-native deployment with high availability  
+| Screenshot | Description |
+|------------|-------------|
+| ![Application Home Page](https://github.com/vaibhaoy19/myweb_Final_Project/blob/c8adc2104c15f110f163f2fd4693bdc1539aba01/Screenshots/Screenshot%202025-08-13%20174605.png) | Application Home Page |
+| ![Jenkins Pipeline](screenshots/jenkins.png) | Jenkins Pipeline Execution |
+| ![Kubernetes Pods](screenshots/k8s_pods.png) | Kubernetes Pods Running |
 
 ---
 
-## 🏆 Conclusion
+# 🎯 PROJECT SUMMARY
+
+| Aspect | Details |
+|--------|---------|
+| **Framework** | Java Web Application |
+| **CI/CD** | Jenkins Pipeline |
+| **Containerization** | Docker |
+| **Orchestration** | AWS EKS (Kubernetes) |
+| **Outcome** | Fully automated cloud-native deployment with high availability |
+
+---
+
+# 🏆 CONCLUSION
 
 This project demonstrates a professional DevOps pipeline integrating CI/CD, containerization, and cloud orchestration.  
 By leveraging Jenkins, Docker, Kubernetes, and AWS EKS, the application achieves:  
 
 **Automation 🚀 | Scalability ☁️ | Reliability 🔧 | Security 🔐**
+
