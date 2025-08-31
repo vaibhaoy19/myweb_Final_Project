@@ -128,15 +128,9 @@ spec:
 ## 📸 Screenshots
 
 ### 🔹 1. Application Home Page
-![App Screenshot](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)
+![Architecture](https://github.com/vaibhaoy19/myweb_Final_Project/blob/95c1ad7fccb82437381d5871e48286c291965a49/Screenshots/Screenshot%202025-08-13%20174605.png)
 
-### 🔹 2. Jenkins Pipeline
-![Pipeline Screenshot](https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/jenkins-pipeline.png?raw=true)
 
-### 🔹 3. Kubernetes Pods Running
-![Pods Screenshot](https://github.com/vaibhaoy19/your-repo-name/blob/main/screenshots/k8s-pods.png?raw=true)
-
----
 
 ## 🌟 Key Highlights
 End-to-End CI/CD Pipeline → GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
