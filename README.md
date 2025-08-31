@@ -1,84 +1,77 @@
-# 🚀 Automated CI/CD Pipeline for Java-Based Web Application using Jenkins, Docker, Maven, and AWS EKS
+# 🚀 Automated Web Application CI/CD Pipeline using Jenkins, Docker, Maven, and AWS EKS
 
-![CI/CD](https://img.shields.io/badge/CI/CD-Automation-blue)  
-![AWS](https://img.shields.io/badge/Cloud-AWS-orange)  
-![DevOps](https://img.shields.io/badge/DevOps-Practices-green)
+![GitHub repo size](https://img.shields.io/github/repo-size/your-username/your-repo-name)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-EKS-blue)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI/CD-red)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
 
 ---
 
 ## 📌 Project Overview
-This project demonstrates the implementation of a **fully automated CI/CD pipeline** for deploying a **Java-based web application** using **Jenkins, Maven, Docker, Kubernetes (EKS), and AWS Cloud services**.  
-
-The pipeline automates the workflow from **code commit → build → containerization → deployment → end-user access**, ensuring **fast delivery, scalability, and zero-downtime deployments**.
+This project implements a **CI/CD pipeline** to automate the deployment of a **Java-based web application**.  
+The pipeline integrates **Jenkins, Maven, Docker, Kubernetes (AWS EKS)** and uses **Docker Hub** for container image storage.
 
 ---
 
 ## 📊 Architecture Workflow
 
-```mermaid
-flowchart LR
-    A[👨‍💻 Developer] -->|Push Code| B[📂 GitHub Repository]
-    B -->|Trigger Build| C[⚙️ Jenkins CI/CD]
-    C -->|Build Artifact| D[📦 Maven (.jar/.war)]
-    D -->|Build Image| E[🐳 Docker]
-    E -->|Push Image| F[📦 Docker Hub]
-    F -->|Pull Image| G[☸️ AWS EKS Cluster]
-    G -->|Deploy Pods| H[🌐 NodePort Service]
-    H -->|Access App| I[👩‍💻 End User]
+![CI/CD Architecture](screenshots/final_architecture.png)
 
-## 🔄 Workflow Steps
-Developer pushes code to GitHub repository.
+**Workflow Steps:**
+1. 👨‍💻 Developer pushes source code to **GitHub**  
+2. ⚙️ **Jenkins** detects changes and triggers pipeline  
+3. 📦 **Maven** builds project & generates artifact (`.jar/.war`)  
+4. 🐳 **Docker** builds container image  
+5. 📦 Image is pushed to **Docker Hub**  
+6. ☸️ **AWS EKS** pulls image & deploys as Pods  
+7. 🌐 **NodePort Service** exposes the app to **End Users**
 
-Jenkins detects changes and triggers the pipeline.
-
-Maven builds the project and generates .jar/.war artifacts.
-
-Docker builds a container image and pushes it to Docker Hub.
-
-AWS EKS (Kubernetes) pulls the image and deploys it as Pods.
-
-Application is exposed via NodePort service for end-users.
+---
 
 ## 🛠️ Tools & Technologies
-AWS: EC2, VPC, IAM, EKS, S3, CloudWatch
+- **Cloud**: AWS (EKS, EC2, IAM, VPC, S3, CloudWatch)  
+- **CI/CD**: Jenkins, GitHub  
+- **Build Tool**: Maven  
+- **Containerization**: Docker  
+- **Orchestration**: Kubernetes (kubectl, eksctl)  
+- **IaC**: Terraform/CloudFormation (optional)  
+- **Monitoring**: CloudWatch, Prometheus, Grafana  
 
-CI/CD: Jenkins, Maven
+---
 
-Containerization: Docker
+## 📂 Project Structure
+📁 project-root
+│── README.md
+│── Jenkinsfile
+│── deployment.yaml
+│── service.yaml
+│── screenshots/
+│ ├── final_architecture.png
+│ ├── app-ui.png
+│ ├── jenkins-pipeline.png
+│ └── k8s-pods.png
 
-Orchestration: Kubernetes (EKS)
-
-Version Control: GitHub
-
-Monitoring: CloudWatch, kubectl logs
-
-⚙️ Jenkinsfile (Pipeline as Code)
-groovy
+python
 Copy code
+
+---
+
+## ⚙️ Jenkins Pipeline (Jenkinsfile)
+```groovy
 pipeline {
     agent any
     stages {
         stage('Checkout') {
-            steps {
-                git 'https://github.com/your-username/your-repo.git'
-            }
+            steps { git 'https://github.com/your-username/your-repo.git' }
         }
         stage('Build with Maven') {
-            steps {
-                sh 'mvn clean package'
-            }
+            steps { sh 'mvn clean package' }
         }
-        stage('Build Docker Image') {
+        stage('Docker Build & Push') {
             steps {
-                sh 'docker build -t your-dockerhub-user/java-app:$BUILD_NUMBER .'
-            }
-        }
-        stage('Push to Docker Hub') {
-            steps {
-                sh '''
-                docker login -u your-dockerhub-user -p $DOCKER_HUB_PASS
-                docker push your-dockerhub-user/java-app:$BUILD_NUMBER
-                '''
+                sh 'docker build -t your-dockerhub-user/your-app:latest .'
+                sh 'docker push your-dockerhub-user/your-app:latest'
             }
         }
         stage('Deploy to Kubernetes') {
@@ -89,67 +82,67 @@ pipeline {
         }
     }
 }
-📂 Kubernetes YAML Files
+☸️ Kubernetes Deployment
 deployment.yaml
+
 yaml
 Copy code
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: java-app
+  name: myapp-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: java-app
+      app: myapp
   template:
     metadata:
       labels:
-        app: java-app
+        app: myapp
     spec:
       containers:
-      - name: java-app
-        image: your-dockerhub-user/java-app:latest
+      - name: myapp
+        image: your-dockerhub-user/your-app:latest
         ports:
         - containerPort: 8080
 service.yaml
+
 yaml
 Copy code
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-app-service
+  name: myapp-service
 spec:
   type: NodePort
   selector:
-    app: java-app
+    app: myapp
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 8080
-      nodePort: 30007
-## 📸 Screenshots
-📍 Place your screenshots inside a folder named screenshots/ in your repo.
+      nodePort: 30008
+📸 Screenshots
+Application UI
 
-Application Running in Browser:
+Jenkins Pipeline
 
-Jenkins CI/CD Pipeline:
+Kubernetes Pods & Service
 
-Kubernetes Pods & Services:
+🌟 Key Highlights
+End-to-End CI/CD Pipeline → GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS
 
-## 🔑 Key Highlights
-End-to-End CI/CD Pipeline: GitHub → Jenkins → Maven → Docker → AWS EKS
+Kubernetes Orchestration with high availability & self-healing Pods
 
-Scalable & Highly Available: Multi-pod Kubernetes deployment
+Artifact Management using Maven & Docker Hub
 
-Artifact Management: Maven + Docker Hub
+Automated Deployment with Kubernetes NodePort Service
 
-Automated Deployment: Kubernetes NodePort service
+Monitoring & Logging using AWS CloudWatch & kubectl logs
 
-Monitoring & Logging: CloudWatch & kubectl logs
-
-Security: IAM roles & policies for safe integration
+Security via IAM roles & permissions
 
 👤 Author
 Vaibhao Yenchalwar
-📧 Email: vaibhaoy1908@gmail.com
-🔗 GitHub: vaibhaoy19
+AWS DevOps Engineer |
+📧 vaibhaoy1908@gmail.com | 🌐 GitHub
