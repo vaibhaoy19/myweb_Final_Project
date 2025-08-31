@@ -115,7 +115,7 @@ spec:
       targetPort: 8080
       nodePort: 30008
 
-# 🌟 Key Highlights
+## 🌟 Key Highlights
 
 - **End-to-End CI/CD Pipeline:** GitHub → Jenkins → Maven → Docker → Docker Hub → AWS EKS  
 - **Kubernetes Orchestration:** High availability & self-healing pods  
@@ -126,7 +126,7 @@ spec:
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
 - **1. Application Home Page**  
   ![Application Home Page](https://github.com/vaibhaoy19/myweb_Final_Project/blob/master/Screenshots/Screenshot%202025-08-13%20174605.png)  
@@ -139,7 +139,7 @@ spec:
 
 ---
 
-# 🎯 Project Summary
+## 🎯 Project Summary
 
 - **Framework:** Java Web Application  
 - **CI/CD:** Jenkins Pipeline  
@@ -149,7 +149,7 @@ spec:
 
 ---
 
-# 🏆 Conclusion
+## 🏆 Conclusion
 
 This project demonstrates a professional DevOps pipeline integrating CI/CD, containerization, and cloud orchestration.  
 By leveraging Jenkins, Docker, Kubernetes, and AWS EKS, the application achieves:  
